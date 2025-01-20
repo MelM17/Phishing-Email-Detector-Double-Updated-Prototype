@@ -6,14 +6,81 @@
     <title>Flagged Emails Dashboard</title>
     <link rel="stylesheet" href="/static/style.css">
 </head>
+<style>
+    .heading{
+        font-size: 30px;
+        font-family: monospace;
+        font-weight: 600;
+        background-color: #001f3f;
+        height: 70px;
+        color: #f5f5dc;
+        display:grid;
+        grid-template-areas: header header;
+        align-items: center;
+        justify-items: center;
+    }
+    .message-no{
+        font-size: 50px;
+        font-family: Impact;
+        display: grid;
+        grid-row: 2;
+        justify-content: center;
+        color:rgb(7, 94, 7)
+    }
+    
+
+    th, td{
+        border:5px;
+    }
+    thead{
+        border:1px;
+        border-color: black;
+    }
+    th {
+    background-color: #f2f2f2; 
+    text-align: left; 
+    font-weight: bold; 
+}
+table {
+    width: 90%;
+    border-collapse: collapse;
+    border: 5px solid #000000;
+    margin-left:50px;
+}
+
+th, td {
+    border: 3px solid #302e2e;
+    padding: 8px;
+    text-align: left;
+    font-family:'Times New Roman';
+    
+}
+
+th {
+    background-color: #f4f4f4;
+    text-align:center;
+    font-family:Verdana;
+}
+.back-button{
+    font-style: italic;
+    background-color: rgb(215, 221, 221);
+    display:block;
+    margin: 10px 650px; 
+    padding: 5px;
+    color:Black;
+}
+
+
+
+</style>
 <body>
     <div class="container">
-        <h1>Flagged Emails Dashboard</h1>
+        <p class="heading">Flagged Emails Dashboard</p>
 
         {% if flagged_emails|length == 0 %}
-            <p>No flagged emails at the moment.</p>
+            <p class="message-no">No flagged emails at the moment.</p>
         {% else %}
-            <table border="1" style="width: 100%; border-collapse: collapse;">
+            <table>
                 <thead>
                     <tr>
                         <th>Email Content</th>
@@ -40,7 +107,7 @@
         {% endif %}
 
         <br>
-        <a href="/">Back to Home</a>
+        <button class="back-button"><a href="/" >Back to Home</a></button>
     </div>
 </body>
 </html>
